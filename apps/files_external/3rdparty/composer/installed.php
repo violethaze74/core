@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '1272be6fbfea16ef8a88578d4da337d05feb53ee',
+    'reference' => 'f3180143ed095c9df3ec8ce13138dbe5fc342d21',
     'name' => 'files_external/3rdparty',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '1272be6fbfea16ef8a88578d4da337d05feb53ee',
+      'reference' => 'f3180143ed095c9df3ec8ce13138dbe5fc342d21',
     ),
     'firebase/php-jwt' => 
     array (
@@ -58,21 +58,10 @@
     ),
     'guzzlehttp/guzzle' => 
     array (
-      'pretty_version' => '7.4.0',
-      'version' => '7.4.0.0',
-      'aliases' => 
+      'replaced' => 
       array (
+        0 => '*',
       ),
-      'reference' => '868b3571a039f0ebc11ac8f344f4080babe2cb94',
-    ),
-    'guzzlehttp/promises' => 
-    array (
-      'pretty_version' => '1.5.0',
-      'version' => '1.5.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '136a635e2b4a49b9d79e9c8fee267ffb257fdba0',
     ),
     'guzzlehttp/psr7' => 
     array (
@@ -146,22 +135,6 @@
       ),
       'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
     ),
-    'psr/http-client' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
-    ),
-    'psr/http-client-implementation' => 
-    array (
-      'provided' => 
-      array (
-        0 => '1.0',
-      ),
-    ),
     'psr/http-message' => 
     array (
       'pretty_version' => '1.0.1',
@@ -202,15 +175,6 @@
       array (
       ),
       'reference' => '120b605dfeb996808c31b6477290a714d356e822',
-    ),
-    'symfony/deprecation-contracts' => 
-    array (
-      'pretty_version' => 'v2.4.0',
-      'version' => '2.4.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '5f38c8804a9e97d23e0c8d63341088cd8a22d627',
     ),
   ),
 );
