@@ -3185,13 +3185,11 @@ class OccContext implements Context {
 	public function theAdministratorHasAddedGroupToTheExcludeGroupFromSharingList(string $groups):void {
 		$groups = \explode(',', \trim($groups));
 		$groups = \array_map('trim', $groups); //removing whitespaces around group names
-		$groups = '"' . \implode('","', $groups) . '"';
 		SetupHelper::runOcc(
 			[
 				'config:app:set',
-				'core',
-				'shareapi_exclude_groups_list',
-				"--value='[$groups]'"
+				'files_sharing blacklisted_receiver_groups',
+				'--value=' . \json_encode($groups)
 			],
 			$this->featureContext->getStepLineRef(),
 			$this->featureContext->getAdminUsername(),
@@ -3199,11 +3197,11 @@ class OccContext implements Context {
 			$this->featureContext->getBaseUrl(),
 			$this->featureContext->getOcPath()
 		);
+		$groups = '"' . \implode('","', $groups) . '"';
 		$response = SetupHelper::runOcc(
 			[
 				'config:app:get',
-				'core',
-				'shareapi_exclude_groups_list'
+				'files_sharing blacklisted_receiver_groups',
 			],
 			$this->featureContext->getStepLineRef(),
 			$this->featureContext->getAdminUsername(),
