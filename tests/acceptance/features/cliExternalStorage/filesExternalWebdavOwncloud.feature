@@ -375,7 +375,7 @@ Feature: using files external service with storage as webdav_owncloud
     # File should not be move but here the file is moved to mount storage
     But as "Alice" file "TestMountPoint/test.txt" should exist
 
-  @issue-39550
+
   Scenario: share receiver tries to move a folder that they have received from someone, to external storage
     Given user "Alice" has been created with default attributes and without skeleton files
     And the administrator has created an external mount point with the following configuration about user "Alice" using the occ command
@@ -392,12 +392,9 @@ Feature: using files external service with storage as webdav_owncloud
     And user "Brian" has shared folder "/testFolder" with user "Alice"
     When user "Alice" moves folder "/testFolder" to "TestMountPoint/testFolder" using the WebDAV API
     Then the HTTP status code should be "403"
-    # Remove the following line after the issue has been fixed
-    And the HTTP response message should be "There was an error while renaming the file or directory"
-    # Uncomment the following line after the issue has been fixed
-    # And the HTTP response message should be "It is not allowed to move one mount point into another one"
+    And the HTTP response message should be "It is not allowed to move one mount point into another one"
 
-  @issue-39550
+
   Scenario: share receiver tries to move a file that they have received from someone, to external storage
     Given user "Alice" has been created with default attributes and without skeleton files
     And the administrator has created an external mount point with the following configuration about user "Alice" using the occ command
@@ -414,7 +411,4 @@ Feature: using files external service with storage as webdav_owncloud
     And user "Brian" has shared file "test.txt" with user "Alice"
     When user "Alice" moves file "/test.txt" to "TestMountPoint/test.txt" using the WebDAV API
     Then the HTTP status code should be "403"
-    # Remove the following line after the issue has been fixed
-    And the HTTP response message should be "There was an error while renaming the file or directory"
-    # Uncomment the following line after the issue has been fixed
-    # And the HTTP response message should be "It is not allowed to move one mount point into another one"
+    And the HTTP response message should be "It is not allowed to move one mount point into another one"
